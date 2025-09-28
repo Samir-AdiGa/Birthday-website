@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 30th Birthday Hanan!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .welcome-message {
+            font-size: 3em;
+            color: #ff1744;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .music-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .music-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+        }
+
+        .cake {
+            position: relative;
+            margin: 40px auto;
+            width: 300px;
+            height: 400px;
+        }
+
+        .cake-base {
+            width: 250px;
+            height: 150px;
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+            border-radius: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .cake-top {
+            width: 200px;
+            height: 100px;
+            background: linear-gradient(45deg, #FFB6C1, #FF69B4);
+            border-radius: 15px;
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .candles {
+            position: absolute;
+            bottom: 220px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .candle {
+            width: 8px;
+            height: 40px;
+            background: #FFFF00;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .flame {
+            width: 12px;
+            height: 15px;
+            background: radial-gradient(circle, #FFA500, #FF4500);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            top: -15px;
+            left: -2px;
+            animation: flicker 1s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { transform: rotate(-2deg) scale(1); }
+            100% { transform: rotate(2deg) scale(1.1); }
+        }
+
+        .number-30 {
+            position: absolute;
+            bottom: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .balloon-instructions {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .balloon {
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .balloon:hover {
+            transform: scale(1.1);
+        }
+
+        .balloon-body {
+            width: 80px;
+            height: 100px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        }
+
+        .balloon-string {
+            width: 2px;
+            height: 150px;
+            background: #333;
+            position: absolute;
+            bottom: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .balloon:nth-child(1) { 
+            top: 100px; 
+            left: 10%; 
+            animation-delay: 0s;
+        }
+        .balloon:nth-child(2) { 
+            top: 200px; 
+            right: 10%; 
+            animation-delay: 1s;
+        }
+        .balloon:nth-child(3) { 
+            top: 150px; 
+            left: 5%; 
+            animation-delay: 2s;
+        }
+        .balloon:nth-child(4) { 
+            top: 300px; 
+            right: 5%; 
+            animation-delay: 3s;
+        }
+        .balloon:nth-child(5) { 
+            top: 250px; 
+            left: 15%; 
+            animation-delay: 4s;
+        }
+
+        .balloon1 .balloon-body { background: linear-gradient(45deg, #ff6b6b, #ee5a24); }
+        .balloon2 .balloon-body { background: linear-gradient(45deg, #4ecdc4, #44a08d); }
+        .balloon3 .balloon-body { background: linear-gradient(45deg, #a8edea, #fed6e3); }
+        .balloon4 .balloon-body { background: linear-gradient(45deg, #ffecd2, #fcb69f); }
+        .balloon5 .balloon-body { background: linear-gradient(45deg, #667eea, #764ba2); }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #FFD700;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: explode 2s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.5) translate(var(--dx), var(--dy));
+            }
+        }
+
+        .wish-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 400px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+            display: none;
+        }
+
+        .wish-message button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .bottom-message {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            padding: 30px;
+            margin: 50px 20px 20px 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            animation: confetti-fall 3s linear infinite;
+            z-index: 100;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome-message">🎉 Happy 30th Birthday, Hanan! 🎉</h1>
+        
+        <button class="music-button" onclick="toggleMusic()">🎵 Play Birthday Music 🎵</button>
+        
+        <div class="cake">
+            <div class="cake-base"></div>
+            <div class="cake-top"></div>
+            <div class="number-30">30</div>
+            <div class="candles">
+                <div class="candle"><div class="flame"></div></div>
+                <div class="candle"><div class="flame"></div></div>
+                <div class="candle"><div class="flame"></div></div>
+            </div>
+        </div>
+
+        <div class="balloon-instructions">
+            🌟 Click on the floating balloons to discover my special wishes for you! Each one holds a piece of my heart and my wishes for your wonderful year ahead! 🌟
+        </div>
+
+        <div class="balloon balloon1" onclick="popBalloon(this, 0)">
+            <div class="balloon-body"></div>
+            <div class="balloon-string"></div>
+        </div>
+        <div class="balloon balloon2" onclick="popBalloon(this, 1)">
+            <div class="balloon-body"></div>
+            <div class="balloon-string"></div>
+        </div>
+        <div class="balloon balloon3" onclick="popBalloon(this, 2)">
+            <div class="balloon-body"></div>
+            <div class="balloon-string"></div>
+        </div>
+        <div class="balloon balloon4" onclick="popBalloon(this, 3)">
+            <div class="balloon-body"></div>
+            <div class="balloon-string"></div>
+        </div>
+        <div class="balloon balloon5" onclick="popBalloon(this, 4)">
+            <div class="balloon-body"></div>
+            <div class="balloon-string"></div>
+        </div>
+
+        <div class="bottom-message">
+            My dear sister, on your special 30th birthday, I want you to know how much I mean to you. You've been my partner in crime, my support, and my biggest cheerleader. Your kindness, strength, and beautiful spirit inspire me every day. Here's to 30 more years of laughter, adventures, and creating unforgettable memories together! 💕
+        </div>
+    </div>
+
+    <div class="wish-message" id="wishMessage">
+        <p id="wishText"></p>
+        <button onclick="closeWish()">Close 💕</button>
+    </div>
+
+
+
+    <script>
+        const wishes = [
+            "May your 30th year be filled with endless joy, laughter, and all the happiness your heart can hold! 🌈✨",
+            "Wishing you adventures that take your breath away and memories that last a lifetime! 🌟💫",
+            "May you always find reasons to smile and people who make your heart happy! 😊💕",
+            "Here's to new dreams, new goals, and new achievements in this amazing year ahead! 🚀🎯",
+            "May your days be as bright and beautiful as your wonderful spirit! 🌞🌸"
+        ];
+
+// --- Web Audio API birthday tune (replace old toggleMusic function with these) ---
+let audioCtx = null;
+let isMusicPlaying = false;
+let scheduledOscillators = [];
+let melodyLoopTimer = null;
+let loopMelody = true; // keep true to mimic <audio loop>
+
+function noteToFreq(note) {
+    // very small helper: map a few named notes to frequencies (A4 = 440)
+    const notes = {
+        'G4': 392.00, 'A4': 440.00, 'B4': 493.88, 'C5': 523.25, 'D5': 587.33,
+        'E5': 659.25, 'F5': 698.46, 'G5': 783.99, 'F4': 349.23
+    };
+    return notes[note] || 440;
+}
+
+// "Happy Birthday" melody (simple transcription, note + duration in seconds)
+const melody = [
+    ['G4', 0.5], ['G4', 0.5], ['A4', 1.0], ['G4', 1.0], ['C5', 1.0], ['B4', 2.0],
+    ['G4', 0.5], ['G4', 0.5], ['A4', 1.0], ['G4', 1.0], ['D5', 1.0], ['C5', 2.0],
+    ['G4', 0.5], ['G4', 0.5], ['G5', 1.0], ['E5', 1.0], ['C5', 1.0], ['B4', 1.0], ['A4', 1.5],
+    ['F5', 0.5], ['F5', 0.5], ['E5', 1.0], ['C5', 1.0], ['D5', 1.0], ['C5', 2.0]
+];
+
+function playMelody() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    // resume context if suspended (required on some browsers)
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+
+    // clear any previous scheduled oscillators
+    scheduledOscillators.forEach(o => {
+        try { o.osc.stop(0); } catch(e) {}
+        try { o.gain.disconnect(); } catch(e) {}
+    });
+    scheduledOscillators = [];
+    if (melodyLoopTimer) { clearTimeout(melodyLoopTimer); melodyLoopTimer = null; }
+
+    const startTime = audioCtx.currentTime + 0.05; // tiny safety offset
+    let t = 0;
+    melody.forEach(([note, dur], idx) => {
+        const freq = noteToFreq(note);
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        // choose a warm waveform
+        osc.type = 'triangle';
+        osc.frequency.value = freq;
+
+        // shape the note envelope
+        gain.gain.setValueAtTime(0, startTime + t);
+        gain.gain.linearRampToValueAtTime(0.25, startTime + t + 0.01); // attack
+        gain.gain.linearRampToValueAtTime(0.18, startTime + t + dur * 0.7); // decay/sustain
+        gain.gain.linearRampToValueAtTime(0.0, startTime + t + dur); // release
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(startTime + t);
+        osc.stop(startTime + t + dur + 0.05); // stop a tiny bit after
+
+        scheduledOscillators.push({ osc, gain });
+        t += dur;
+    });
+
+    // If loop is desired, schedule a callback to re-play after song length
+    const totalDuration = t + 0.1;
+    if (loopMelody) {
+        melodyLoopTimer = setTimeout(() => {
+            // only restart if still playing
+            if (isMusicPlaying) playMelody();
+        }, totalDuration * 1000);
+    }
+}
+
+function stopMelody() {
+    // stop any scheduled oscillators immediately
+    scheduledOscillators.forEach(o => {
+        try { o.osc.stop(0); } catch (e) {}
+        try { o.gain.disconnect(); } catch (e) {}
+    });
+    scheduledOscillators = [];
+    if (melodyLoopTimer) { clearTimeout(melodyLoopTimer); melodyLoopTimer = null; }
+}
+
+// Replace the old toggleMusic function with this:
+function toggleMusic() {
+    const button = document.querySelector('.music-button');
+    if (!audioCtx) {
+        // create a context on first user interaction (some browsers require gesture)
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    if (isMusicPlaying) {
+        // stop music
+        stopMelody();
+        isMusicPlaying = false;
+        button.textContent = '🎵 Play Birthday Music 🎵';
+    } else {
+        // start music
+        isMusicPlaying = true;
+        button.textContent = '🎵 Pause Music 🎵';
+        // ensure context resumed (mobile autoplay policies)
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+
+        playMelody();
+
+        // call your existing confetti helper (keeps current behavior)
+        if (typeof createConfetti === 'function') createConfetti();
+    }
+}
+
+
+        function popBalloon(balloon, index) {
+            // Create explosion particles
+            for (let i = 0; i < 15; i++) {
+                createParticle(balloon);
+            }
+            
+            // Show wish message
+            document.getElementById('wishText').textContent = wishes[index];
+            document.getElementById('wishMessage').style.display = 'block';
+            
+            // Hide the balloon
+            balloon.style.display = 'none';
+            
+            // Create more confetti
+            createConfetti();
+        }
+
+        function createParticle(balloon) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const rect = balloon.getBoundingClientRect();
+            particle.style.left = (rect.left + rect.width / 2) + 'px';
+            particle.style.top = (rect.top + rect.height / 2) + 'px';
+            
+            const angle = Math.random() * 2 * Math.PI;
+            const distance = 50 + Math.random() * 100;
+            const dx = Math.cos(angle) * distance;
+            const dy = Math.sin(angle) * distance;
+            
+            particle.style.setProperty('--dx', dx + 'px');
+            particle.style.setProperty('--dy', dy + 'px');
+            
+            const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#A8EDEA', '#667EEA'];
+            particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 2000);
+        }
+
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.background = ['#FF6B6B', '#4ECDC4', '#A8EDEA', '#FFD700', '#667EEA'][Math.floor(Math.random() * 5)];
+                    confetti.style.animationDelay = Math.random() * 3 + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
+
+        function closeWish() {
+            document.getElementById('wishMessage').style.display = 'none';
+        }
+
+        // Auto-create some initial confetti
+        setTimeout(createConfetti, 1000);
+    </script>
+</body>
+</html>
